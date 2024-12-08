@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Quản lý lịch trình</title>
+    <link rel="icon" href="./assets/img/logo.png" type="image/png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./assets/font/font-awesome-6.3.0-pro-main/font-awesome-6.3.0-pro-main/css/all.css"
+    />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+  </head>
+  <body>
+    <div class="toast-container position-fixed top-0 end-0 p-3"></div>
+    <main>
+      <form action="" id="add-schedule-form">
+        <input
+          type="text"
+          class="form-control"
+          id="schedule-title-input--add"
+          placeholder="Enter schedule title"
+          required
+        />
+        <div class="schedule-input-box">
+          <label for="schedule-date-picker">
+            <i class="fa-light fa-calendar"></i>
+          </label>
+          <input
+            type="text"
+            class="form-control"
+            id="schedule-date-picker--add"
+            placeholder="YYYY-MM-DD"
+            required
+          />
+        </div>
+        <div class="schedule-input-box">
+          <label for="schedule-time-input"
+            ><i class="fa-light fa-clock"></i
+          ></label>
+          <input
+            type="time"
+            class="form-control"
+            id="schedule-time-input--from--add"
+            required
+          />
+          <span style="margin: 0 8px">-</span>
+          <input
+            type="time"
+            class="form-control"
+            id="schedule-time-input--to--add"
+            required
+          />
+        </div>
+        <div class="schedule-input-box">
+          <label for="schedule-location-input">
+            <i class="fa-light fa-location-dot"></i>
+          </label>
+          <input
+            type="text"
+            class="form-control"
+            id="schedule-location-input--add"
+            placeholder="Enter schedule location"
+          />
+        </div>
+        <div class="category-selection-box">
+          <div class="category-option personal">personal</div>
+          <div class="category-option work">work</div>
+          <div class="category-option health">health</div>
+          <div class="category-option event">event</div>
+        </div>
+        <button type="submit" class="add-schedule-btn">add schedule</button>
+      </form>
+      <div class="header-calendar">
+        <div id="header">
+          <nav class="navbar">
+            <a href="index.html">
+              <i class="fa-solid fa-calendar-lines-pen logo"
+                ><span>Quản lý lịch trình</span></i
+              >
+            </a>
+            <input
+              type="text"
+              id="date-picker"
+              placeholder="YYYY-MM-DD"
+              required
+            />
+            <div class="action-box">
+              <button class="add-schedule-open-btn">add schedule</button>
+              <div class="options-menu">
+                <button id="options-btn" title="More options">
+                  <i class="fas fa-ellipsis-v"></i>
+                </button>
+                <div id="options-content" class="options-content">
+                  <button id="export-btn">
+                    <i class="fas fa-file-export"></i> Export
+                  </button>
+                  <button id="import-btn">
+                    <i class="fas fa-file-import"></i> Import
+                  </button>
+                </div>
+              </div>
+              <input
+                type="file"
+                id="import-input"
+                accept=".xlsx"
+                style="display: none"
+              />
+            </div>
+          </nav>
+        </div>
+        <div class="calendar"></div>
+      </div>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
